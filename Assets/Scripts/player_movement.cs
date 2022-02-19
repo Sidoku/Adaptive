@@ -6,7 +6,7 @@ public class player_movement : MonoBehaviour
 {
 
     public float movementSpeed = 2f;
-    public float jumpHeight = 3f;
+    public float jumpHeight = 5f;
     public float gravityScale = 1f;
 
     //player_movement player;
@@ -22,11 +22,11 @@ public class player_movement : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         transform.position += new Vector3(movementSpeed, 0, 0) * Time.deltaTime * movementSpeed;
 
-        if (Input.GetKeyDown("space"))
+        if (Input.GetKeyDown("space") || Input.GetTouch(0).phase == TouchPhase.Began)
         {
             rigidBody.AddForce(new Vector2(0, jumpHeight), ForceMode2D.Impulse);
         }

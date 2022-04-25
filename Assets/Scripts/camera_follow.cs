@@ -7,7 +7,7 @@ public class camera_follow : MonoBehaviour
 
     public Transform target;
     public float followSpeed = 0.5f ;
-    public float xMin = 0f;
+    public float yMin = 0f;
     public Vector3 offset;
     Vector3 velocity = Vector3.zero;
 
@@ -21,7 +21,7 @@ public class camera_follow : MonoBehaviour
     void FixedUpdate()
     {
         Vector3 targetPosition = target.position + offset;
-        Vector3 clampedPosition = new Vector3(Mathf.Clamp(targetPosition.x, xMin, float.MaxValue), targetPosition.y, targetPosition.z);
+        Vector3 clampedPosition = new Vector3(targetPosition.x, Mathf.Clamp(targetPosition.y, yMin, float.MaxValue), targetPosition.z);
         Vector3 smoothPosition = Vector3.SmoothDamp(transform.position, clampedPosition, ref velocity, followSpeed *Time.deltaTime);
 
         transform.position = smoothPosition;

@@ -5,9 +5,10 @@ using UnityEngine;
 public class player_movement : MonoBehaviour
 {
 
-    public float movementSpeed = 2f;
-    public float jumpHeight = 5f;
-    public float gravityScale = 1f;
+    public float movementSpeed = 10f;
+    public float jumpHeight = 2f;
+    public float gravityScale = 0f;
+    public bool flag = false;
 
     //player_movement player;
 
@@ -19,28 +20,34 @@ public class player_movement : MonoBehaviour
     void Start()
     {
         rigidBody = GetComponent<Rigidbody2D>();
+
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        transform.position += new Vector3(movementSpeed, 0, 0) * Time.deltaTime * movementSpeed;
-
-        if (Input.GetKeyDown("space") || Input.GetTouch(0).phase == TouchPhase.Began)
+        if (Input.GetKey(KeyCode.RightArrow))
         {
-            rigidBody.AddForce(new Vector2(0, jumpHeight), ForceMode2D.Impulse);
+            //transform.Translate(movementSpeed, 0, 0);
+            rigidBody.AddForce(transform.right * movementSpeed);            
+        }
+        else if (Input.GetKey(KeyCode.LeftArrow))
+        {
+            //transform.Translate(-movementSpeed, 0, 0);
+            rigidBody.AddForce(transform.right * (-movementSpeed));
+        }
+        else
+        {
+
         }
     }
-
+    
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Obstacle")
+        if (collision.gameObject.tag == "Obstacle" & flag == false)
         {
+            flag = true;
             Debug.Log("Player collided with obstacle");
-            jumpHeight = 0f;
-        }
-        if (collision.gameObject.tag == "floor")
-        {
             Debug.Log("Loading next level");
             level.LoadNextLevel();
         }

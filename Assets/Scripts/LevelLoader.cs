@@ -17,20 +17,32 @@ public class LevelLoader : MonoBehaviour
     {
         Debug.Log("Loading next level scene is: " + SceneManager.GetActiveScene().buildIndex);
 
-
-        //  Last stage will loop
-        if(SceneManager.GetActiveScene().buildIndex == 2)
+        if (Retry_scene.retry_number > 0)
         {
+            Debug.Log("Loading current level again" + Retry_scene.retry_number);
+            Retry_scene.retry_number--;
             StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex));
         }
         else
         {
-            StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
+            Debug.Log("Got into the else");
+            Retry_scene.retry_number += 3;
+            //  Last stage will loop
+            if (SceneManager.GetActiveScene().buildIndex == 2)
+            {
+                StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex));
+            }
+            else
+            {
+                Debug.Log("Ended retrys");
+                StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
+            }
         }
     }
 
     public void LoadEndScreen()
     {
+        
         if(SceneManager.GetActiveScene().buildIndex == 0)
         {
             Debug.Log("Loading end scene is: " + SceneManager.GetActiveScene().buildIndex);
@@ -39,7 +51,6 @@ public class LevelLoader : MonoBehaviour
         }
         else
         {
-
             Debug.Log("Loading else scene is: " + SceneManager.GetActiveScene().buildIndex);
 
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);

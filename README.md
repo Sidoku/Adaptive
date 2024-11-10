@@ -19,7 +19,7 @@
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
 <div align="center">
-    <img src="Title.png" , width = "500", height = "600">
+    <img src="Title.png" , width = "500", height = "400">
 </div>
 
 <!-- PROJECT LOGO -->
@@ -60,7 +60,16 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-This is a touch based prototype game with the premise to test players based on their failure. The player begins the game at the hardest level, upon failure, the player is spawned into an easier level each time. This game was built as a prototype to test the viability of a reverse game progression and it's effect on player experience.
+This is a touch based prototype game with the premise to test players based on their failure. The player begins the game at the hardest level, upon failure, the player is spawned into an easier level each time. This game was built as a prototype to test the viability of a reverse game progression and it's effect on player experience. The game started as a horizontal scroller, which was then changed to a vertical scroller since it allowed better use of the vertically taller phone screens. The player was also awarded two attempts at each level before being demoted as player testing revealed that players were likely to feel frustrated and not improve adapt to each level due to the speed of the game.
+
+## Snapshots
+
+Below are some screenshots of the game:
+
+<p align="center">
+<img height="500" width="300" src="Prototype.png">
+<img height="500" width="300" src="Title.png">
+</p>
 
 ### Built With
 

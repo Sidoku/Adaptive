@@ -67,7 +67,7 @@ This is a touch based prototype game with the premise to test players based on t
 Below are some screenshots of the game:
 
 <p align="center">
-<img height="500" width="600" src="Prototype.png">
+<img height="400" width="600" src="Prototype.png">
 <img height="500" width="300" src="Title.png">
 </p>
 

@@ -30,7 +30,7 @@
   Adaptive is a 2D game built for the mobile platform inspired by flappy bird built in Unity.
     <br />
     <div align="center">
-    <a href="https://www.youtube.com/watch?v=_Tr9U8EX-OM" target="_blank">Trailer</a>
+    <a href="https://www.youtube.com/watch?v=--F9c43l-eA" target="_blank">Gameplay</a>
     </div>
   </p>
 </div>

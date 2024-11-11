@@ -102,6 +102,6 @@ Major frameworks/libraries used to bootstrap the project.
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://www.linkedin.com/in/abhinav-chitty-16a341152/
 [linkedin-url]: https://www.linkedin.com/in/siddharthsinghai97/
+[portfolioIcon-url]: https://img.shields.io/badge/-Portfolio-brightgreen
 [portfolio-url]: https://sidsinghai97.wixsite.com/portfolio
